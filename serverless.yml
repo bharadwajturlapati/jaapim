@@ -1,0 +1,25 @@
+service: jaapim
+
+provider: 
+  name: aws
+  runtime: nodejs10.x
+  environment: 
+    NODE_ENV: dev
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  exclude:
+    - node_modules
+    - dist
+
+
+functions:
+  lrs:
+    handler: src/app/handler.wait
+    events:
+      - http:
+          path: lrs
+          method: get

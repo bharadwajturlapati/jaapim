@@ -1,5 +1,5 @@
 const objectchecker = {
-    isNilOrUndefined : (object: object) => object == null || object == undefined
+    isNilOrUndefined: (object: object) => object == null || object == undefined
 }
 
 export default objectchecker;

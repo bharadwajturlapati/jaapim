@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/bharadwajturlapati/jaapim#readme",
   "dependencies": {
+    "@types/aws-lambda": "^8.10.57",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
@@ -32,6 +33,9 @@
     "koa-router": "^9.0.1"
   },
   "devDependencies": {
-    "@types/node": "^14.0.14"
+    "@types/node": "^14.0.14",
+    "serverless-offline": "^6.4.0",
+    "serverless-plugin-typescript": "^1.1.9",
+    "typescript": "^3.9.5"
   }
 }
