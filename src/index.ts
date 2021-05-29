@@ -20,9 +20,17 @@ router.get('/', async (ctx, next) =>{
 });
 
 router.get('/cases/longrun', async (ctx, next) =>{
-    const waittime = ctx.query.wait;
-    lrs(objcheck.isNilOrUndefined(waittime) ? 2000 : waittime);
-    ctx.body = {msg : `i waited for you for ${waittime}`};
+    const waittime = objcheck.isNilOrUndefined(ctx.query.wait) ? 2000 : ctx.query.wait;
+    lrs(waittime);
+    ctx.body = {msg : `i waited for you for this  ${waittime}`};
+    await next();
+});
+
+// Ideally some of the uses cases require post to work for them.
+router.post('/cases/longrun', async (ctx, next) =>{
+    const waittime = objcheck.isNilOrUndefined(ctx.query.wait) ? 2000 : ctx.query.wait;
+    lrs(waittime);
+    ctx.body = {msg : `i waited for you for this  ${waittime}`};
     await next();
 });
 
